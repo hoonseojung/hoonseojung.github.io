@@ -1,0 +1,14 @@
+---
+title: "the basics of a computer / 컴퓨터 모래성 쌓기"
+layout: archive
+permalink: categories/computer-science
+author_profile: true
+sidebar_main: true
+---
+
+<!-- 공백이 포함되어 있는 카테고리 이름의 경우 site.categories['a b c'] 이런식으로! -->
+
+***
+
+{% assign posts = site.categories.Computer-science %}
+{% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}
