@@ -106,7 +106,7 @@ analytics:
 # Site Author
 author:
   name: "HS"
-  avatar: # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar: "/assets/images/moon.png"
   bio: "블로그 공사 중!"
   location: "Seoul"
   email:
