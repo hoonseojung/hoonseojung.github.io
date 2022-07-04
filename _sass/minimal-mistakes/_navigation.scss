@@ -261,7 +261,7 @@
           left: 0;
           bottom: 0;
           height: 4px;
-          background: $primary-color;
+          background: #82B3ED;
           width: 100%;
           -webkit-transition: $global-transition;
           transition: $global-transition;
@@ -471,7 +471,7 @@
       color: inherit;
       font-size: $type-size-3;
       font-family: $cute;
-      color: mix(#fff,$primary-color,30%);
+      color: mix(#fff,$primary-color,15%);
   
       &:hover {
         text-decoration: underline;
@@ -527,7 +527,7 @@
     padding: 0.25rem 0;
     font-size: $type-size-3;
     font-family: $serif;
-    color: mix(#fff,$primary-color,20%);
+    color: mix(#fff,$primary-color, 5%);
     border-bottom: 1px solid $border-color;
   }
   
