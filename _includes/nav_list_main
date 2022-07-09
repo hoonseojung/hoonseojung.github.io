@@ -28,8 +28,8 @@
         <span class="nav__sub-title">ML/DL</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Nlp" %}
-                        <li><a href="/categories/nlp" class="">Nlp({{category[1].size}})</a></li>
+                    {% if category[0] == "DL" %}
+                        <li><a href="/categories/dl" class="">DL({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
