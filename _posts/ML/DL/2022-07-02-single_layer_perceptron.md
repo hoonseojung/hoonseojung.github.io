@@ -2,9 +2,9 @@
 title: "단층 퍼셉트론과 AND, NAND, OR gate 구현"
 
 categories:
-  - Nlp
+  - DL
 tags:
-  - [ML/DL, Nlp]
+  - [Deep Learning, perceptron]
 
 toc: true
 toc_sticky: true
