@@ -98,3 +98,51 @@ perceptron의 구조는 AND, NAND, OR gate에서 모두 동일하고, 각 gate�
 
 # 3. 구현
 
+```python
+import numpy as np
+
+class Perceptron(object):
+
+"""
+eta : float
+n_iter : int
+random_state : int
+w_ : 1d-array
+errors_ : list
+"""
+
+    def __init__(self, eta = 0.01, n_iter = 50, random_state = 1):
+        self.eta = eta
+        self.n_iter = n_iter
+        self.random_state = random_state
+    
+    """
+    X : {array-like}, shape = [n_samples, n_feaures] -> {}안에 데이터, n_samples개 샘플과 n_features개의 특성, 훈련데이터
+    y : array-like, shape = [n_samples] -> {}안에 데이터, n_samples개의 정답 타깃
+    """
+
+    def fit(self, X, y):
+        rgen = np.random.RandomState(self.random_state)
+        self.w_ = rgen.normal(loc = 0.0, scale = 0.01, size = 1 + X.shape[1])
+        self.errors_ = []
+        for _ in range(self.n_iter):
+            errors = 0
+            for xi, target in zip(X, y):
+                update = self.eta * (target - self.predict(xi))
+                self.w_[1:] += update * xi
+                self.w_[0] += update
+                errors += int(update != 0.0)
+            self.errors.append(errors)
+    return self
+
+    def net_input(self, X):
+        return np.dot(X, self.w_[1:] + self.w_[0])
+    
+    def predict(self, X):
+        return np.where(self.net_input(X) >= 0.0, 1, -1)
+```
+
+먼저, fit 함수에서 self.w_ 로 표현된 가중치는 벡터 R^(m+1)로 초기화된다.  
+m은 데이터 셋의 차원을 뜻합니다. 2차원데이터라면 R은 R^3이 되겠죠. size 에 1을 더한 이유는 앞선 섹션에서 이야기한 것처럼 절편을 만들기 위함입니다. 따라서 self.w_[0]은 절편이 됩니다. 
+ fit 에서 쓰이고 있는 self.w_벡터는 rgen.normal(loc = 0.0, scale=0.01, size = 1+X.shape[1])로 표준편차(scale)이 0.01인 정규분포에서 뽑은 랜덤한 작은 수를 담고 있습니다. 사실 정규분포인 것도, 0.01인 것도 크게 의미는 없으니 신경쓰지 않으셔도 됩니다. 이 작은 수로 가중치를 초기화하는 것입니다. 쓰인 rgen함수는 numpy에서 제공하는 난수 생성기로, 시드를 통해 값을 제공하기 때문에 이전과 같은 결과를 계속 제공할 수 있습니다. 실행에 따라 값이 바뀌는 것은 아니라는 말이죠. 
+ 이때 우리는 왜 가중치를 0으로 초기화하지 않지? 라는 의문이 들 수 있습니다. 그 이유는 가중치를 0으로 초기화하면 학습률이 가중치 벡터의 방향이 아닌 크기에만 영향을 마치기 때문입니다.
