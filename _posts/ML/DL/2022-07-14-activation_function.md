@@ -40,8 +40,9 @@ Sigmoid 함수의 정의
 Sigmoid 함수 미분 과정
 ![](https://mblogthumb-phinf.pstatic.net/MjAyMDAyMjVfMjYg/MDAxNTgyNjA2MzkwNTQx.eUt8n14w7VCLfyZxM9zcnaM9WblF9kT7qPfKFnOZajkg.o1XBEQtAaKFbpLBTG_e6XEkV5Vh65HFeQg6OMy_8lQcg.PNG.handuelly/image.png?type%3Dw800)
 
-Sigmoid 함수(좌) & Sigmoid 도함수(우)
+Sigmoid 함수 & Sigmoid 도함수
 ![](https://mblogthumb-phinf.pstatic.net/MjAyMDAyMjVfMjI4/MDAxNTgyNjA3MjY0NzIy.tR76IK8YsIL8XORjYDJoMSNBK2nhpUooUhMS6N0d1NUg.bMGce-shmpX6--ck-mvfcTimMjL3UpFw2iSgQgExCR8g.PNG.handuelly/image.png?type%3Dw800)
+
 ![](https://mblogthumb-phinf.pstatic.net/MjAyMDAyMjVfMTM5/MDAxNTgyNjA3MjcxMjE0.T7uG6k2la4WUJjrRwMHVB3FuidBNK2tYPhXpzSwGDUsg._-ameb8qQWpDkhk5SDUDUU9Bag2GpfN7mw78g_Jc8HQg.PNG.handuelly/image.png?type%3Dw800)
 
 하지만 Sigmoid 함수는 음수 값을 0에 가깝게 표현하기 때문에 입력 값이 최종 레이어에서 미치는 영향이 적어지는 Vanishing Gradient Problem이 발생한다.  
@@ -68,8 +69,9 @@ Hyperbolic Tangent Function은 쌍곡선 함수 중 하나로, Sigmoid 함수를
 Tanh 함수의 정의와 미분 과정은 아래 수식과 같은데, $$σ(x)$$는 Sigmoid 함수 식이다.  
 ![](https://mblogthumb-phinf.pstatic.net/MjAyMDAyMjVfMTk0/MDAxNTgyNjA3NzcyOTI3.Oc7diAw06G0vb-b86Wp5O-sy2Oa_bHHZnxnc2ASFYjAg.0dxRIz0WS3xkT51tlC8Yl1w_pDDRWynAaCX4NzxIq3Eg.PNG.handuelly/image.png?type%3Dw800)
 
-Tanh 함수(좌) & Tanh 도함수(우)
+Tanh 함수 & Tanh 도함수
 ![](https://mblogthumb-phinf.pstatic.net/MjAyMDAyMjVfOSAg/MDAxNTgyNjA3Njg0NDc0.3PxflDp1EDXZVSsOwpBBYUXQP9GLJmPTqz872JMxkc4g.QlUM1zGGT9WK9b7jcLQwhXTAr3Tqp4k2RZuCeidUTOIg.PNG.handuelly/image.png?type%3Dw800)
+
 ![](https://mblogthumb-phinf.pstatic.net/MjAyMDAyMjVfMTUx/MDAxNTgyNjA3NjkyODMx.YhSLbMr-W9d_FSLnSbnTxdm0GMwYY_Yx6XMTGTI8eWQg.r_CATCsMwW6F4xhrfIFBp3yV6760Ez-sK5phPrUE0jYg.PNG.handuelly/image.png?type%3Dw800)
 
 tanh 함수는 함수의 중심점을 0으로 옮겨 Sigmoid 함수가 갖고 있던 최적화 과정에서 느려지는 문제를 해결했다.  
