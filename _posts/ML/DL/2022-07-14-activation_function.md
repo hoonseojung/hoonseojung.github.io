@@ -34,7 +34,7 @@ last_modified_at: 2022-07-14
 Sigmoid 함수는 Logistic 함수라고 불리기도 하며, x의 값에 따라 0~1의 값을 출력하는 S자형 함수이다.  
 
 Sigmoid 함수의 정의
-![](https://mblogthumb-phinf.pstatic.net/MjAyMDAyMjVfNDQg/MDAxNTgyNjA2Mzc5MDY5.zxVCMRhPDevOiEqeW9Zld_qIExdLNovxjzMgD5csjKQg.U7vFTEIlTe8blGu1s6wFptli8_X1oe-QOfztJHWN7-og.PNG.handuelly/image.png?type%3Dw800)
+[](https://www.google.com/imgres?imgurl%3Dhttps%3A%2F%2Fprwatech.in%2Fblog%2Fwp-content%2Fuploads%2F2020%2F02%2Flogi3.png%26imgrefurl%3Dhttps%3A%2F%2Fprwatech.in%2Fblog%2Ftag%2Fassumptions-for-logistic-regression%2F%26tbnid%3D3ELcrktzQ9oJRM%26vet%3D10CAMQxiAoAGoXChMIyLeqyuD8-AIVAAAAAB0AAAAAEAY..i%26docid%3DAQIaFJRBwzhNbM%26w%3D337%26h%3D150%26itg%3D1%26q%3Dsigmoid%20function%20machine%20learning%20formula%26hl%3Dko%26ved%3D0CAMQxiAoAGoXChMIyLeqyuD8-AIVAAAAAB0AAAAAEAY)
 
 
 Sigmoid 함수 미분 과정
