@@ -10,11 +10,12 @@ toc: true
 toc_sticky: true
 
 date: 2022-07-18
-last_modified_at: 2022-07-18
+last_modified_at: 2022-07-19
 ---
 
 # seq2seq learning
 
+## seq2seq 모델이란?
 - sequential 패턴들이 들어왔을 때 그것을 입력으로 받아 모두 처리한 후 다시 또다른 sequence를 output으로 출력해주는 구조
 - input : sequence of items(단어, letter, feautres of an images 등)
 - output : item의 또다른 sequence(Input과 개수 다를 수 있음)
@@ -35,13 +36,16 @@ last_modified_at: 2022-07-18
     - Bahdanau attention은 attention score 자체를 학습하는 neural network model이 존재
     - Luong attention은 attention score를 따로 training시키지 않고 현재 hidden state와 기존의 과거 hidden state들의 유사도를 측정하여 attention score를 만듦
     - 위 두 attention 사이의 퍼포먼스 차이가 그렇게까지 크진 않은 것으로 알려져 있음 —> 학습시키지 않고 단순한 곱셈 연산으로 계산하는 attention이 학습시키는 attention과 성능의 차이가 크지 않다면, 당연히 실용적으로 Luong을 사용
-    - attention mechanism이 적용된 seq2seq learning과 기존의 classic한 방법 차이점
-        - encoder가 final hidden state뿐만 아니라 모든 hidden state를 decoder에게 넘겨줘 더 많은 정보를 넘겨줌
-        - 그러면 decoding이 수행되는 과정에서 필요한 hidden state를 선택하여 서로 다른 가중치를 통해 활용함
-        - decoder의 관점에선 encoder가 전달해주는 여러 hidden state를 가지고 output을 가지고 extra step을 수행하게 됨
-            - extra step : encoder가 보내준 hidden state를 다 봄
-            - 이 hidden state는 아무리 LSTM이나 GRU를 사용했어도 기본적인 가정은 각각의 hidden state는 해당하는 단어의 sequence에 가장 영향을 많이 받음
-            - 현재 output을 생성하고자 하는 단계에서의 hidden state들의 score를 만들고, score에 대해서 softmax를 수행한 후 해당하는 값들을 모두 결합하여(score가 클수록 중요도 큼) 하나의 weighted vector 생성 = 해당 time step의 context vector
-                - score —> Luong attention의 경우 각각의 hidden state에 score를 매기는데, score 자체가 decoder와 encoder의 hidden state를 내적한 값이라 봐도 무방
-            - 그렇게 만들어진 context vector와 decoder의 hidden state vector를 결합(concatenate)하여 neural network의 입력으로 넣으면 최종적으로 output vector가 토큰으로 반환됨
-    - 히트맵 : 왼쪽 열 = 실제 입력 값, 오른 행 = 번역 출력 값, 각각의 입력 값이 출력된 번역 값에 어디와 attention이 많이 되어있는지, 밝을 수록 많이 된 것
+
+## attention mechanism이 적용된 seq2seq learning과 기존의 classic한 방법 차이점
+    - encoder가 final hidden state뿐만 아니라 모든 hidden state를 decoder에게 넘겨줘 더 많은 정보를 넘겨줌
+    - 그러면 decoding이 수행되는 과정에서 필요한 hidden state를 선택하여 서로 다른 가중치를 통해 활용함
+    - decoder의 관점에선 encoder가 전달해주는 여러 hidden state를 가지고 output을 가지고 extra step을 수행하게 됨
+        - extra step : encoder가 보내준 hidden state를 다 봄
+        - 이 hidden state는 아무리 LSTM이나 GRU를 사용했어도 기본적인 가정은 각각의 hidden state는 해당하는 단어의 sequence에 가장 영향을 많이 받음
+        - 현재 output을 생성하고자 하는 단계에서의 hidden state들의 score를 만들고, score에 대해서 softmax를 수행한 후 해당하는 값들을 모두 결합하여(score가 클수록 중요도 큼) 하나의 weighted vector 생성 = 해당 time step의 context vector
+            - score —> Luong attention의 경우 각각의 hidden state에 score를 매기는데, score 자체가 decoder와 encoder의 hidden state를 내적한 값이라 봐도 무방
+        - 그렇게 만들어진 context vector와 decoder의 hidden state vector를 결합(concatenate)하여 neural network의 입력으로 넣으면 최종적으로 output vector가 토큰으로 반환됨
+
+## 히트맵
+왼쪽 열 = 실제 입력 값, 오른 행 = 번역 출력 값, 각각의 입력 값이 출력된 번역 값에 어디와 attention이 많이 되어있는지, 밝을 수록 많이 된 것
