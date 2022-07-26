@@ -103,7 +103,7 @@ Leaky ReLUU는 ReLU가 갖는 Dying ReLU(뉴런이 죽는 현상)을 해결하�
 Leaky ReLU 정의
 ![](https://mblogthumb-phinf.pstatic.net/MjAyMDAyMjVfMjU5/MDAxNTgyNjA4NzA5MzUx.8bwP5NUnWan-vKq91HKuFL-FdZyG-nLVx-E2f03EMtEg.r09fBQqyqbI9-iSw8x2gla2TAuTBRpuEfBrlOyhiLMAg.PNG.handuelly/image.png?type%3Dw800)
 ​
-0.01이 아니라 매우 작은 값이라면 무엇이든 사용 가능하다.  
+0.01이 아니어도 매우 작은 값이라면 무엇이든 사용 가능하다.  
 
 Leaky ReLU는 x가 음수인 영역의 값에 대해 미분값이 0이 되지 않는다는 점을 제외하면 ReLU의 특성을 동일하게 갖는다.  
 
